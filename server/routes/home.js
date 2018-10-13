@@ -7,5 +7,6 @@ const Ctrl = require('../controllers/home');
 router.get('/', Ctrl.index);
 router.get('about', Ctrl.about);
 router.get('honorable', Ctrl.honorable);
+router.get('dashboard', Ctrl.dashboard);
 
 module.exports = router.routes();

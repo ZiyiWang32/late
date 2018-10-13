@@ -1,0 +1,52 @@
+extends /template
+//- pull some datastructure from BE that holds all due dates and planned work schedule for current student for the week(sunday before today->sunday after today) hold in variable "week"
+
+//-by default show only today: week[?]
+
+//- have a button to see 1 day only, past weeks, next weeks, current month, past months, next months, 
+//-button(type='button'  onclick='gotoBlog(' + val.link + ')')
+
+
+block content
+  //- include dashboard.js
+  //- script(src='./dashboard.js')
+  script
+    src= dashboard.js
+    //- include dashboard.js
+    include dashboard.scss
+
+  -const week = ["Stupid Hass essay due 10/12 12-3pm","Circuits hw due 10/22", "Data Structures test studying for 10/25"]
+  -const today = ["Stupid Hass essay due 10/12"]
+  -var state = {showing:week}
+
+
+  section.section
+    .container
+      h2.title= new Date().toDateString()
+
+      .content <!--will optionally display different timespans based off of current selection, default to current day-->
+        -const currDisplay = state.showing
+        each n in currDisplay
+          p= n
+  button(type="button" 
+  onclick= 'changeTimeDisplayed('+JSON.stringify(week)+','+JSON.stringify(state)+')') Week
+  button(type="button" 
+  onclick= 'changeTimeDisplayed('+JSON.stringify(today)+','+JSON.stringify(state)+')') Today
+  
+
+
+
+
+
+
+  nav(class= "dropdown")
+    ul
+      li
+        a(href="") SUB A
+      li
+        a(href="") SUB B
+      li
+        a(href="") SUB C
+      li
+        a(href="") SUB D
+

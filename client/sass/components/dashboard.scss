@@ -1,0 +1,10 @@
+nav.dropdown{
+	ul{
+		visibility:hidden !important;
+	}
+}
+nav.dropdown:hover{
+	ul{
+		visibility: visible !important;
+	}
+}
