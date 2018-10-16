@@ -29,16 +29,22 @@ block content
         -const currDisplay = state.showing
         each n in currDisplay
           p= n
+
+
+  //- Need to make both buttons same size-// 
   button(type="button" 
   onclick= 'changeTimeDisplayed('+JSON.stringify(week)+','+JSON.stringify(state)+')') Week
   button(type="button" 
   onclick= 'changeTimeDisplayed('+JSON.stringify(today)+','+JSON.stringify(state)+')') Today
 
 
+
   nav(class= "dropdown")
     ul
       li
-        a(href="") SUB A
+        a(href="", id="needToShow") Choice
+      li
+        a(href="")  SUB A
       li
         a(href="") SUB B
       li
@@ -46,13 +52,7 @@ block content
       li
         a(href="") SUB D
 
-
-  .dropdown
-  button Next Week
-  .dropdown-content
-    a(href='#') Link 1
-    a(href='#') Link 2
-    a(href='#') Link 3
+ 
 
 
 
