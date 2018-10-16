@@ -10,14 +10,15 @@ extends /template
 block content
   //- include dashboard.js
   //- script(src='./dashboard.js')
+
   script
-    src= dashboard.js
-    //- include dashboard.js
-    include dashboard.scss
+  //-   //-(src= dashboard.js)
+  //-   //-include dashboard.js
 
   -const week = ["Stupid Hass essay due 10/12 12-3pm","Circuits hw due 10/22", "Data Structures test studying for 10/25"]
   -const today = ["Stupid Hass essay due 10/12"]
   -var state = {showing:week}
+  
 
 
   section.section
@@ -32,11 +33,6 @@ block content
   onclick= 'changeTimeDisplayed('+JSON.stringify(week)+','+JSON.stringify(state)+')') Week
   button(type="button" 
   onclick= 'changeTimeDisplayed('+JSON.stringify(today)+','+JSON.stringify(state)+')') Today
-  
-
-
-
-
 
 
   nav(class= "dropdown")
@@ -49,4 +45,16 @@ block content
         a(href="") SUB C
       li
         a(href="") SUB D
+
+
+  .dropdown
+  button Next Week
+  .dropdown-content
+    a(href='#') Link 1
+    a(href='#') Link 2
+    a(href='#') Link 3
+
+
+
+
 

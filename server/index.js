@@ -7,6 +7,7 @@ const Helmet = require('koa-helmet');
 const Session = require('koa-session');
 const KoaBody = require('koa-body');
 const Views = require('koa-views');
+const serveSass = require('koa.sass');
 
 const path = require('path');
 
@@ -34,6 +35,13 @@ app.use(Helmet());
 
 /* Log web server requests */
 app.use(Logger());
+
+/* Koa-sass setup */
+app.use(serveSass({
+	mountAt: '/css/',
+	src: "client/sass/",
+	dest: "client/public/css/"
+}));
 
 /* Serve static files (CSS, JS, audio, etc.) */
 app.use(Static('client/public'));
