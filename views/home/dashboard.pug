@@ -8,12 +8,10 @@ extends /template
 
 
 block content
-  //- include dashboard.js
-  //- script(src='./dashboard.js')
-
+  //- include dashboard.js IF JS IS IN SAME DIRECTORY AS CURRENT FILE
+  //- script(src='./dashboard.js') IF JS IS IN CLIENT/PUBLIC/JS/
   script
-  //-   //-(src= dashboard.js)
-  //-   //-include dashboard.js
+    include ../../client/public/js/dashboard.js
 
   -const week = ["Stupid Hass essay due 10/12 12-3pm","Circuits hw due 10/22", "Data Structures test studying for 10/25"]
   -const today = ["Stupid Hass essay due 10/12"]
@@ -39,10 +37,10 @@ block content
 
 
 
-  nav(class= "dropdown")
-    ul
+  nav(class= "dropdown") 
+    ul() Choices
       li
-        a(href="", id="needToShow") Choice
+        a(href="") Choice
       li
         a(href="")  SUB A
       li
@@ -51,8 +49,6 @@ block content
         a(href="") SUB C
       li
         a(href="") SUB D
-
- 
 
 
 

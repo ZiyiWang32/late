@@ -1,4 +1,5 @@
-button,{
+
+button{
 	background-color:#ff3860;
     color:white;
     border:none;
@@ -7,28 +8,25 @@ button,{
 
 }
 
-
-
 nav.dropdown{
-	ul{
+	li{
+		visibility:hidden;
+	}
+    ul{
         transition-at-ease:250ms;
-		visibility:hidden !important;
+        visibility:hidden !important;
         background-color:#ff3860;
         border:none;
         padding:10px 15px 10px 15px;
         margin-left:20px;
-	}
+    }
     a{
         color:white;
     }
 }
 nav.dropdown:hover{
-	ul{
-		visibility: visible !important;
+	li{
+		visibility: visible;
 	}
 }
 
-
-#needToShow{
-    visibility:visible important;
-}
